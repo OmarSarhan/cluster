@@ -1,5 +1,5 @@
 provider "google" {
   project     = var.project_id
   region      = var.location
-  credentials = var.google_sa
+  credentials = base64decode(var.google_sa)
 }
