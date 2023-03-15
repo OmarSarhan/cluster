@@ -30,7 +30,7 @@ jobs:
         id: init
         env:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
-        run: echo "terraform init" >> $GITHUB_OUTPUT
+        run: terraform init
 
       - name: Terraform Format
         id: format
