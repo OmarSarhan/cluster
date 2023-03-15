@@ -1,4 +1,4 @@
-variable "TF_VAR_gcp_credentials" {
+variable "gcp_credentials" {
   type        = string
   description = "SA for GCP"
 }
