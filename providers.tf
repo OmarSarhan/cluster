@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "cluster-380700"
+  project     = var.project_id
   region      = var.location
   credentials = var.google_sa
 }

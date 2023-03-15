@@ -1,7 +1,7 @@
-resource "google_container_cluster" "primary" {
+resource "google_container_cluster" {
   name                     = var.cluster_name
   location                 = var.location
-  project                  = "cluster-380700"
+  project                  = var.project_id
   subnetwork               = var.subnetwork
   initial_node_count       = 1
   remove_default_node_pool = false
@@ -10,9 +10,9 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name           = "${var.cluster_name}-node-pool"
   location       = var.location
-  project        = "cluster-380700"
+  project        = var.project_id
   version        = var.worker_nodes_version
-  cluster        = google_container_cluster.primary.name
+  cluster        = google_container_cluster.name
   node_locations = var.node_locations
   node_count     = var.worker_nodes_count
 
