@@ -47,7 +47,7 @@ jobs:
         id: comment
         uses: actions/github-script@v3
         if: github.event_name == 'pull_request'
-        with:
+        env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -74,6 +74,6 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        env:
+        with:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: terraform apply -auto-approve
