@@ -3,7 +3,7 @@ name: "GKE Terraform"
 on:
   push:
     paths:
-      - "gke_tf/**"
+      - "gke/**"
       - "worker_nodes/**"
     branches:
       - master
@@ -12,7 +12,7 @@ on:
 jobs:
   terraform:
     env:
-      GOOGLE_CREDENTIALS: ${{ secrets.GCP_SECRET }}
+      GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_SECRET }}
     name: "Terraform"
     runs-on: ubuntu-latest
 
