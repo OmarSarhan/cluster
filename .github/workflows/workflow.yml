@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - "gke/**"
-      - "worker_nodes/**"
     branches:
       - master
   pull_request:
@@ -13,7 +12,7 @@ jobs:
   terraform:
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_SECRET }}
-    name: "Terraform"
+    name: "Create Cluster"
     runs-on: ubuntu-latest
 
     steps:

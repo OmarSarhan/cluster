@@ -1,8 +1,7 @@
-cluster_name           = "production-cluster"
+cluster_name           = "cluster"
 location               = "europe-west2"
-project_id             = "grounded-will-296203"
+project_id             = "cluster-380700"
 subnetwork             = "default"
-node_pool_name         = "production-cluster-node-pool-1"
 master_version         = "1.24.9-gke.3200"
 worker_nodes_version   = "1.24.9-gke.3200"
 node_locations         = ["europe-west2-a", "us-east1-b"]
