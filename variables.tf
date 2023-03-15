@@ -1,44 +1,43 @@
-variable "gcp_credentials" {
-  type        = string
-  description = "SA for GCP"
+# env vars
+variable "prefix" {
+  type = string
 }
 
-variable "gcp_project_id" {
-  type        = string
-  description = "GCP Project ID"
+variable "region" {
+  type    = string
+  default = "europe-west2"
 }
 
-variable "gcp_region" {
-  type        = string
-  description = "GCP Region"
+# group vars
+variable "env" {
+  type = string
 }
 
-variable "gcp_regional" {
-  type        = string
-  description = "GCP Region"
+variable "org_id" {
+  type = string
 }
 
-variable "gke_cluster_name" {
-  type        = string
-  description = "GKE Cluster Name"
+variable "billing_account" {
+  type = string
 }
 
-variable "gke_cluster_env" {
-  type        = string
-  description = "GKE Cluster Environment"
+variable "folder_id" {
+  type = string
 }
 
-variable "gcp_zones" {
-  type        = list(string)
-  description = "List of GCP Zones for GKE"
+variable "host_project_id" {
+  type = string
 }
 
-variable "gke_network" {
-  type        = string
-  description = "Network for GKE"
+# other env vars
+variable "vpc" {
+  type = object({
+    subnetwork    = string
+    pod_range     = string
+    service_range = string
+  })
 }
 
-variable "gke_subnetwork" {
-  type        = string
-  description = "Subnetwork for GK"
+variable "firewall_ports" {
+  type = list(string)
 }
