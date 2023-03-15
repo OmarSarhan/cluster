@@ -10,7 +10,7 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name           = "${var.cluster_name}-node-pool"
   location       = var.location
-  project        = var.project_id
+  project        = "cluster-380700"
   version        = var.worker_nodes_version
   cluster        = google_container_cluster.primary.name
   node_locations = var.node_locations
