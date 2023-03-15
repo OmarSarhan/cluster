@@ -32,12 +32,6 @@ jobs:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: terraform init
 
-      - name: var test
-        id: test
-        env:
-          TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
-        run: echo $TF_VAR_gcp_credentials  | sed 's/./& /g'
-
       - name: Terraform Format
         id: format
         run: terraform fmt -check
