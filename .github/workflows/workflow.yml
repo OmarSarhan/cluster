@@ -2,8 +2,6 @@ name: "GKE Terraform"
 
 on:
   push:
-    paths:
-      - "gke/**"
     branches:
       - main
   pull_request:
