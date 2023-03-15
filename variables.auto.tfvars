@@ -1,4 +1,3 @@
-gcp_credentials  = "test"
 gcp_project_id   = "cluster-380700"
 gcp_region       = "europe-west2"
 gcp_regional     = "false"
