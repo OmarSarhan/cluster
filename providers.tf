@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = TF_VAR_GOOGLE_SA
+  credentials = var.TF_VAR_GOOGLE_SA
   project     = var.gcp_project_id
   region      = var.gcp_region
 }
