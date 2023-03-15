@@ -31,7 +31,7 @@ jobs:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: echo "terraform init" >> $GITHUB_OUTPUT
 
-      - name:
+      - name: Terraform Format
         id: format
         run: terraform fmt -check
 
