@@ -20,4 +20,6 @@ variable "worker_nodes_disk_size" {}
 
 variable "worker_node_type" {}
 
+variable "google_sa" {}
+
 
