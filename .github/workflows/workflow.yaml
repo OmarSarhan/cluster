@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 env:
   TF_LOG: INFO
@@ -12,11 +15,6 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./main
 
     steps:
       - name: Checkout
