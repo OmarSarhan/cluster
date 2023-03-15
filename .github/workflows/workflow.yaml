@@ -28,7 +28,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        env:
+        with:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: terraform init
 
@@ -38,7 +38,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        env:
+        with:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
@@ -47,7 +47,7 @@ jobs:
         id: comment
         uses: actions/github-script@v3
         if: github.event_name == 'pull_request'
-        env:
+        with:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
