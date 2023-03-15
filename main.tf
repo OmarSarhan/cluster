@@ -2,7 +2,7 @@
 
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
-  project_id                 = var.gcp_project_id
+  project_id                 = "cluster-380700"
   name                       = "${var.gke_cluster_name}-${var.gke_cluster_env}"
   region                     = var.gcp_region
   regional                   = var.gcp_regional
