@@ -1,4 +1,4 @@
-gcp_credentials  = TF_VAR_GOOGLE_SA
+gcp_credentials  = "test"
 gcp_project_id   = "cluster-380700"
 gcp_region       = "europe-west2"
 gcp_regional     = "false"
