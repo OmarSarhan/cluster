@@ -1,4 +1,4 @@
-module "gke" {
+module "gh-runner-gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
   project_id                 = var.gcp_project_id
   name                       = "${var.gke_cluster_name}-${var.gke_cluster_env}"
