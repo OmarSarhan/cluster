@@ -1,6 +1,6 @@
 provider "google" {
   credentials = var.gcp_credentials
-  project     = var.gcp_project_id
+  project     = "cluster-380700"
   region      = var.gcp_region
 }
 
