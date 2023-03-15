@@ -29,7 +29,7 @@ jobs:
         id: init
         env:
           TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
-        run: terraform init
+        run: terraform init >> $GITHUB_OUTPUT
 
       - name:
         id: format
@@ -42,7 +42,6 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
 
-      # Add a comment to pull requests with plan results
       - name: add-plan-comment
         id: comment
         uses: actions/github-script@v3
