@@ -28,7 +28,7 @@ jobs:
       - name: Terraform Init
         id: init
         env:
-          GOOGLE_SA: ${{ secrets.GOOGLE_SA }}
+          TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: terraform init
 
       - name:
@@ -38,7 +38,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         env:
-          GOOGLE_SA: ${{ secrets.GOOGLE_SA }}
+          TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
 
@@ -75,5 +75,5 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         env:
-          GOOGLE_SA: ${{ secrets.GOOGLE_SA }}
+          TF_VAR_gcp_credentials: ${{ secrets.GOOGLE_SA }}
         run: terraform apply -auto-approve
