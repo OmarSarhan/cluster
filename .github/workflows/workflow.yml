@@ -11,7 +11,7 @@ on:
 jobs:
   terraform:
     env:
-      TF_VARS_google_sa: ${{ secrets.GCP_SA_SECRET }}
+      TF_VAR_google_sa: ${{ secrets.GCP_SA_SECRET }}
     name: "Create Cluster"
     runs-on: ubuntu-latest
 
