@@ -27,7 +27,7 @@ jobs:
         id: init
         run: |
           echo "export TF_VAR_google_sa=$(env | grep TF_VAR_google_sa | cut -d= -f2-)" > TF_VAR_google_sa.json &&
-          export GOOGLE_APPLICATION_CREDENTIALS = TF_VAR_google_sa.json &&
+          export GOOGLE_APPLICATION_CREDENTIALS=TF_VAR_google_sa.json &&
           terraform init
 
       - name: Terraform Plan
