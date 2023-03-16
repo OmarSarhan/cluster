@@ -2,7 +2,6 @@ cluster_name           = "cluster"
 location               = "europe-west2"
 project_id             = "cluster-380700"
 subnetwork             = "default"
-master_version         = "1.24.9-gke.3200"
 worker_nodes_version   = "1.24.9-gke.3200"
 node_locations         = ["europe-west2-a", "us-east1-b"]
 worker_nodes_count     = "1"
