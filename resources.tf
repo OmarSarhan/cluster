@@ -29,3 +29,8 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     }
   }
 }
+
+resource "local_file" "statesave" {
+  content  = data.terraform_remote_state.statesave.outputs.greeting
+  filename = "${path.module}/outputs.txt"
+}
