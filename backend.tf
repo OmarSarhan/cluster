@@ -1,5 +1,6 @@
-backend "gcs" {
-  bucket = "cluster-terraform-states"
-  prefix = "terraform/state"
+terraform {
+  backend "gcs" {
+    bucket = "cluster-terraform-states"
+    prefix = "terraform/state"
+  }
 }
-
