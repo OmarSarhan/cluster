@@ -3,7 +3,7 @@ resource "google_container_cluster" "primary" {
   location = var.location
   # project                  = var.project_id
   # subnetwork               = var.subnetwork
-  # initial_node_count       = 1
+  initial_node_count = 1
   # remove_default_node_pool = false
 }
 
