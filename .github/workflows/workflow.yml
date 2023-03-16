@@ -24,10 +24,11 @@ jobs:
         run: terraform fmt -check
 
       - name: Terraform Init
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_SECRET }}
         id: init
-        run: terraform init
+        run: |
+          echo "export TF_VAR_google_sa=$(env | grep TF_VAR_google_sa | cut -d= -f2-)" > TF_VAR_google_sa.json &&
+          export GOOGLE_APPLICATION_CREDENTIALS = TF_VAR_google_sa.json &&
+          terraform init
 
       - name: Terraform Plan
         id: plan
