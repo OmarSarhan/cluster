@@ -3,9 +3,10 @@ resource "google_container_cluster" "primary" {
   location           = var.location
   initial_node_count = 1
   maintenance_policy {
-    daily_maintenance_window {
-      start_time = "03:00"
-      end_time   = "05:00"
+    recurring_window {
+      start_time = "2019-08-01T02:00:00Z"
+      end_time   = "2019-08-01T06:00:00Z"
+      recurrence = "FREQ=DAILY"
     }
   }
 }
