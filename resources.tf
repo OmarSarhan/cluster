@@ -1,5 +1,5 @@
 resource "google_service_account" "default" {
-  account_id   = "github-actions-terraform-sa"
+  account_id   = "github-actions-terraform-sa_2"
   display_name = "Service Account"
 }
 
