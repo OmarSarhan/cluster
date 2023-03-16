@@ -12,6 +12,7 @@ jobs:
   terraform:
     env:
       TF_VAR_google_sa: ${{ secrets.GCP_SA_SECRET }}
+      TF_LOG: "debug"
     name: "Create Cluster"
     runs-on: ubuntu-latest
 
@@ -43,7 +44,5 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        env:
-          TF_LOG: "debug"
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
