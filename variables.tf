@@ -4,8 +4,6 @@ variable "location" {}
 
 variable "project_id" {}
 
-variable "master_version" {}
-
 variable "subnetwork" {}
 
 variable "worker_nodes_version" {}
