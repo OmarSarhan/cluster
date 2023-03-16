@@ -2,12 +2,11 @@ resource "google_container_cluster" "primary" {
   name               = var.cluster_name
   location           = var.location
   initial_node_count = 1
-}
-
-resource "google_container_cluster" "maintenance_policy" {
-  daily_maintenance_window {
-    start_time = "03:00"
-    end_time   = "05:00"
+  maintenance_policy {
+    daily_maintenance_window {
+      start_time = "03:00"
+      end_time   = "05:00"
+    }
   }
 }
 
