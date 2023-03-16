@@ -1,3 +1,8 @@
+resource "google_service_account" "default" {
+  account_id   = "github-actions-terraform-sa@cluster-380700.iam.gserviceaccount.com"
+  display_name = "Service Account"
+}
+
 resource "google_container_cluster" "primary" {
   name     = var.cluster_name
   location = var.location
