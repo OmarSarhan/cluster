@@ -24,7 +24,7 @@ jobs:
         id: setup-creds
         run: |
           echo $TF_VAR_google_sa > ~/TF_VAR_google_sa.json &&
-          echo "~/TF_VAR_google_sa.json" >> GOOGLE_APPLICATION_CREDENTIALS
+          echo "GOOGLE_APPLICATION_CREDENTIALS=~/TF_VAR_google_sa.json" >> $GITHUB_ENV
 
       - name: view credentionals file
         id: view-creds
