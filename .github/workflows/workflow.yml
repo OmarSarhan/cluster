@@ -30,7 +30,7 @@ jobs:
         id: view-creds
         run: |
           echo $GOOGLE_APPLICATION_CREDENTIALS &&
-          echo "~/TF_VAR_google_sa.json"
+          echo cat ~/TF_VAR_google_sa.json
 
       - name: Terraform Format
         id: fmt
