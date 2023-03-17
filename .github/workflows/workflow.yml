@@ -26,6 +26,12 @@ jobs:
           echo $TF_VAR_google_sa > ~/TF_VAR_google_sa.json &&
           echo "~/TF_VAR_google_sa.json" >> GOOGLE_APPLICATION_CREDENTIALS
 
+      - name: view credentionals file
+        id: view-creds
+        run: |
+          echo $GOOGLE_APPLICATION_CREDENTIALS &&
+          echo "~/TF_VAR_google_sa.json"
+
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
